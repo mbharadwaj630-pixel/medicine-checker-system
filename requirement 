@@ -1,0 +1,11 @@
+Project Requirements
+A. Functional Requirements (What the system does)
+Search Functionality: The system must allow users to query a specific medicine by name (case-insensitive) and retrieve a full profile including dosage, uses, and precautions.
+Inventory Management: The system must provide a mechanism to add new medication entries, including their availability status, into the active database.
+Data Visualization: The system must be able to display a comprehensive list of all stored medications to provide an overview of the current database.
+Safety Information Delivery: For every successful search, the system must explicitly display "Precautions" and "Side Effects" to ensure user safety.
+B. Non-Functional Requirements (How the system performs)
+Usability: The interface must be a simple Command Line Interface (CLI) with a numbered menu, making it accessible for users with basic computer literacy.
+Performance: Search results must be retrieved in O(1) time complexity using hash-mapping (dictionaries) to ensure near-instantaneous response.
+Robustness: The system must handle "Medicine Not Found" scenarios gracefully without crashing the program.
+Portability: The script should run on any standard Python 3.x interpreter without the need for external library installations.
