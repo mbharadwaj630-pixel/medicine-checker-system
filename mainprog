@@ -1,0 +1,67 @@
+Here is your Medicine Checker System rewritten to be around 200 words, with clearer structure, improved messages, and slightly expanded explanations while keeping the code simple and functional.
+
+# Simple Medicine Checker System (200-word version)
+
+medicines = {
+    "medomol": {
+        "dosage": "Adults: 500mg every 6 hours, maximum 4g per day",
+        "precautions": "Avoid alcohol; use carefully in patients with liver problems",
+        "uses": "Helps reduce fever, headaches, and mild body pain",
+        "availability": "In stock",
+        "side_effects": "Nausea, mild skin rash, possible liver irritation"
+    },
+    "zyrtec": {
+        "dosage": "Adults: 10mg once daily",
+        "precautions": "May cause sleepiness; avoid driving or operating machines",
+        "uses": "Provides relief from allergies, sneezing, and cold symptoms",
+        "availability": "In stock",
+        "side_effects": "Dry mouth, dizziness, drowsiness"
+    },
+    "nurofen": {
+        "dosage": "Adults: 400mg every 6–8 hours",
+        "precautions": "Avoid if you have ulcers, kidney issues, or stomach disorders",
+        "uses": "Reduces inflammation and provides effective pain relief",
+        "availability": "Low stock",
+        "side_effects": "Heartburn, stomach discomfort"
+    }
+}
+
+def search_medicine(name):
+    key = name.lower()
+    if key in medicines:
+        print("\n--- Medicine Details ---")
+        for field, value in medicines[key].items():
+            print(f"{field.capitalize()}: {value}")
+    else:
+        print("Medicine not found in the database.")
+
+def add_medicine():
+    name = input("Enter medicine name: ").lower()
+    medicines[name] = {
+        "uses": input("Enter uses: "),
+        "dosage": input("Enter dosage: "),
+        "side_effects": input("Enter side effects: "),
+        "precautions": input("Enter precautions: "),
+        "availability": input("Enter availability: ")
+    }
+    print("New medicine successfully added to the system.")
+
+def main():
+    while True:
+        print("\nMenu Options: 1.Search  2.Add  3.Show All  4.Exit")
+        choice = input("Choose an option: ")
+        if choice == "1":
+            search_medicine(input("Enter medicine name: "))
+        elif choice == "2":
+            add_medicine()
+        elif choice == "3":
+            print("\nList of Medicines:")
+            for med in medicines:
+                print("-", med.capitalize())
+        elif choice == "4":
+            print("Thank you for using the Medicine Checker System.")
+            break
+        else:
+            print("Invalid choice. Please choose again.")
+
+main()
